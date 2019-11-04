@@ -31,7 +31,7 @@ class NeighbourHood(models.Model):
 class Business(models.Model):
     bName = models.CharField(max_length=60)
     user = models.ForeignKey(User,on_delete=models.CASCADE, null=True)
-    hood_id = models.ForeignKey(NeighbourHood, on_delete=models.CASCADE)
+    hood_id = models.ForeignKey(NeighbourHood, on_delete=models.CASCADE, null=True)
     buzz_email = models.CharField(max_length=60,null=True)
     
     def __str__(self):
