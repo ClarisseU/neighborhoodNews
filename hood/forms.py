@@ -9,4 +9,4 @@ class ProfileForm(forms.ModelForm):
 class NewBusinessForm(forms.ModelForm):
     class Meta:
         model = Business
-        exclude = ['user']        
+        exclude = ['user', 'hood_id']        
