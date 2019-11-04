@@ -1,0 +1,31 @@
+{%extends 'all-app/base.html'%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Neighborhood News</title>
+
+</head>
+
+<body>
+
+    {% block content %} {{block.super}}
+    <div class="container">
+        <div class="row">
+            <div class="input-group mb-3">
+                <select class="custom-select" id="inputGroupSelect02" action="{% url 'search_results' %}">
+                        <option selected>Choose your neigborhood</option>
+                        {% for n in ngbrhd %}
+                        <option value="1"><a href="">{{n.nName}}</a></option>
+                        {% endfor %}
+                </select>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+</body>
+
+</html>
