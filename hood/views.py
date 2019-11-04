@@ -19,7 +19,7 @@ def welcome(request):
 def neighborhood(request):
     neighbor = NeighbourHood.objects.all()
     buzz = Business.objects.all()
-    return render(request, 'neighborhood.html', {'buzz':buzz})
+    return render(request, 'neighborhood.html', {'buzz':buzz, 'neighbor':neighbor})
 
 def search_results(request):
     '''
