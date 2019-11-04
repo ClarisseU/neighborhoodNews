@@ -16,7 +16,8 @@
     <div class="container">
         <div class="row">
             <div class="input-group mb-3">
-                <select class="custom-select" id="inputGroupSelect02" action="{% url 'search_results' %}">
+                <select class="custom-select" id="inputGroupSelect02">
+                    
                         <option selected>Choose your neigborhood</option>
                         {% for n in ngbrhd %}
                         <option value="1"><a href="">{{n.nName}}</a></option>
