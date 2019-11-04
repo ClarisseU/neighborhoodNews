@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<head>
+    <style>
+        a:hover {
+            color: rgb(13, 175, 13);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <ul class="nav nav-tabs nav-justified">
+            <li class="nav-item">
+                <a class="nav-link active" href="{%url 'welcome'%}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'new-business' %}">Business</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+            </li>
+
+            <div class="col-sm-6 col-md-6">
+                {% if user.is_authenticated %}
+                <ul>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle btn btn-default" data-toggle="dropdown" role="button" aria-expanded="false">Account
+                  <span class="caret"></span>
+              </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <li>
+                                <a href="{%url 'welcome'%}">Home</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'new-profile' %}">Create Profile</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'new-business' %}"> Add Business</a>
+                            </li>
+                            <li>
+                                <a href="/accounts/password/change">Change Password</a>
+                            </li>
+                            <li>
+                                <a href="{% url 'auth_logout' %}?next=/">Logout</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                {% else %}
+                <li>
+                    <a class='btn btn-default' href="/accounts/login">Login</a>
+                </li>
+
+                {% endif %}
+            </div>
+        </ul>
+    </div>
+</body>
