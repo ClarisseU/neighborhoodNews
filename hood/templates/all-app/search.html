@@ -1,0 +1,25 @@
+{%extends 'all-app/base.html'%} {% block content %}
+<div class="container">
+
+    <div class="row">
+        {% if neighborhood%}
+        <h2>Found {{ neighborhood|length }} of searched term {{message}}</h2>
+        {% else %}
+        <h2> Found 0 articles for the search term {{message}}</h2>
+        {% endif %}
+
+    </div>
+
+    <div class="row">
+
+        {% if neighborhood %} {% for n in neighborhood %}
+        <div class="col-sm-6 col-md-3">
+            <h1>{{images.category}}</h1>
+            <ul>
+                <li><img src="{{neighborhood.neighborhood.url}}" class="img-responsive"></li>
+            </ul>
+        </div>
+        {% endfor %} {% endif %}
+    </div>
+</div>
+{% endblock%}
