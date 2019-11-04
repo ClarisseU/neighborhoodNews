@@ -1,0 +1,30 @@
+{% load bootstrap4 %} {% load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8"> {% if title %}
+    <title> Neighborhood News- {{title}}</title>
+    {% else %}
+    <title> Neigborhood News- </title>
+    {% endif %} {% block styles %} {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/basenews.css' %}"> {% endblock %}
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("https://cdn.pixabay.com/photo/2018/09/19/23/03/sunset-3689760_960_720.jpg");
+            /* background-repeat: no-repeat; */
+            background-size: cover;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "navbar.html" %} {% block content %}
+    <h1 class='text-center'> {{date|date:"l d-F Y"}}</h1> {%endblock%} {% block scripts %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {% bootstrap_javascript %} {% endblock %}
+</body>
+
+</html>
